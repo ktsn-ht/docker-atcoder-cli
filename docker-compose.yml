@@ -1,0 +1,11 @@
+version: "3"
+services:
+  atcoder-cli:
+    build:
+      context: .
+      args:
+        username: # input github username you want to use
+        reponame: # input repository name you want to use
+    image: atcoder-cli
+    container_name: atcoder-cli
+    tty: true
