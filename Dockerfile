@@ -1,5 +1,4 @@
 FROM centos:centos8
-ENV DEBIAN_FRONTEND=noninteractive
 ARG username
 ARG reponame
 
