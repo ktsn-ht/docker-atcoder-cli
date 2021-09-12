@@ -43,7 +43,8 @@
     ```
 6. Docker イメージをビルドしてコンテナを起動後、コンテナに入る
     ```
-    $ docker-compose up -d --build
+    $ docker-compose build --no-cache
+    $ docker-compose up -d
     $ docker-compose exec atcoder-cli /bin/bash
     ```
 7. atcoder-cli と online-judge-tools でログインする
