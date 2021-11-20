@@ -3,9 +3,6 @@ services:
   app:
     build:
       context: .
-      args:
-        username: ktsn-ht # input github username you want to use
-        reponame: atcoder # input repository name you want to use
     image: atcoder-cli
     container_name: atcoder-cli
     tty: true

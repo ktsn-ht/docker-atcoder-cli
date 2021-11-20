@@ -1,7 +1,8 @@
 FROM centos:centos8
-ARG username
-ARG reponame
 
+WORKDIR /work
+COPY cpp /root/.config/atcoder-cli-nodejs/cpp
+COPY ssh /root/.ssh
 RUN yum update -y && yum install -y \
     git \
     gcc-c++ \
@@ -12,10 +13,5 @@ RUN yum update -y && yum install -y \
  && acc config oj-path /usr/local/bin/oj \
  && acc config default-test-dirname-format test \
  && acc config default-template cpp \
- && acc config default-task-choice all
-COPY cpp /root/.config/atcoder-cli-nodejs/cpp
-COPY ssh /root/.ssh
-
-WORKDIR /work
-RUN chmod 600 /root/.ssh/* \
- && git clone git@github.com:${username}/${reponame}.git
+ && acc config default-task-choice all \
+ && chmod 600 /root/.ssh/*

@@ -1,7 +1,6 @@
 # Docker for atcoder-cli
 
 ## Docker イメージの内容
-- github から Atcoder 作業用リポジトリのクローン
 - atcoder-cli + online-judge-tools のインストール
 
 ## 利用方法
@@ -27,25 +26,15 @@
         ├── config
         └── id_rsa
     ```
-5. docker-compose.yml を編集する
-    ```yml
-    version: "3"
-      services:
-        atcoder-cli:
-          build:
-            context: .
-            args:
-              username: (ここに入力)  # input github username you want to use
-              reponame: (ここに入力)  # input repository name you want to use
-          image: atcoder-cli
-          container_name: atcoder-cli
-          tty: true
+5. Docker イメージをビルドしてコンテナを起動後、コンテナに入る
     ```
-6. Docker イメージをビルドしてコンテナを起動後、コンテナに入る
-    ```
-    $ docker-compose build --no-cache
+    $ docker-compose build
     $ docker-compose up -d
-    $ docker-compose exec atcoder-cli /bin/bash
+    $ docker-compose exec app /bin/bash
+    ```
+6. Atcoder 作業用リポジトリをクローンする
+    ```
+    # git clone git@github.com:(作業用リポジトリ)
     ```
 7. atcoder-cli と online-judge-tools でログインする
     ```
