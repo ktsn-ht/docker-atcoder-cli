@@ -14,4 +14,6 @@ RUN yum update -y && yum install -y \
  && acc config default-test-dirname-format test \
  && acc config default-template cpp \
  && acc config default-task-choice all \
- && chmod 600 /root/.ssh/*
+ && chmod 600 /root/.ssh/* \
+ && echo 'alias acclogin="acc login"' >> ~/.bashrc \
+ && echo 'alias ojlogin="oj login https://beta.atcoder.jp/"' >> ~/.bashrc

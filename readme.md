@@ -38,8 +38,8 @@
     ```
 7. atcoder-cli と online-judge-tools でログインする
     ```
-    # acc login
-    # oj login https://beta.atcoder.jp/
+    # acclogin
+    # ojlogin
     ```
 8. コンテナ内で作業をおこなう
     - 問題を解く
