@@ -2,8 +2,8 @@ FROM centos:centos8
 
 WORKDIR /work
 COPY cpp /root/.config/atcoder-cli-nodejs/cpp
-COPY ssh /root/.ssh
-RUN yum update -y && yum install -y \
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-Linux-* \
+ && yum update -y && yum install -y \
     git \
     gcc-c++ \
     python3 \
@@ -14,6 +14,5 @@ RUN yum update -y && yum install -y \
  && acc config default-test-dirname-format test \
  && acc config default-template cpp \
  && acc config default-task-choice all \
- && chmod 600 /root/.ssh/* \
  && echo 'alias acclogin="acc login"' >> ~/.bashrc \
  && echo 'alias ojlogin="oj login https://beta.atcoder.jp/"' >> ~/.bashrc
