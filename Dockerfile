@@ -7,9 +7,7 @@ RUN apk update && apk add --no-cache \
     py3-pip \
     g++ \
  && npm update -g npm && npm install -g atcoder-cli \
- && pip install online-judge-tools \
- && echo 'alias acclogin="acc login"' >> $ENV \
- && echo 'alias ojlogin="oj login https://beta.atcoder.jp/"' >> $ENV \
+ && pip install online-judge-tools aclogin \
  && addgroup -g 1000 -S ${USER} \
  && adduser -u 1000 -S ${USER} -G ${USER} \
  && echo "${USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
